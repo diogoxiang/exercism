@@ -33,6 +33,7 @@ func TestTestVersion(t *testing.T) {
 	if testVersion != targetTestVersion {
 		t.Fatalf("Found testVersion = %v, want %v", testVersion, targetTestVersion)
 	}
+
 }
 
 func TestCreateClock(t *testing.T) {

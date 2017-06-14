@@ -1,5 +1,7 @@
 package clock
 
+import "fmt"
+
 const testVersion = 4
 
 // You can find more details and hints in the test file.
@@ -14,10 +16,12 @@ func New(hour, minute int) Clock {
 	return c
 }
 
-func (Clock) String() string {
+func (c Clock) String() string {
+	return fmt.Sprintf("%02d:%02d", c/60, c%60)
 }
 
-func (Clock) Add(minutes int) Clock {
+func (c Clock) Add(minutes int) Clock {
+	return New(0, int(c)+minutes)
 }
 
 // Remember to delete all of the stub comments.
